@@ -1,0 +1,28 @@
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/nm-connection-editor
+%{{ user2 }} ALL= NOPASSWD: /usr/sbin/dmidecode
+%{{ user2 }} ALL= NOPASSWD: /usr/sbin/reboot
+%{{ user2 }} ALL= NOPASSWD: /usr/sbin/poweroff
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/timedatectl
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/systemctl restart NetworkManager
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/systemctl restart NetworkManager.service
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/apt
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/nm-applet
+%{{ user2 }} ALL= NOPASSWD: /bin/date
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/nm-connection-editor
+%{{ user2 }} ALL= NOPASSWD: /bin/bash
+%{{ user2 }} ALL= NOPASSWD: /usr/bin/su
+
+
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/nm-connection-editor
+%{{ user1 }} ALL= NOPASSWD: /usr/sbin/dmidecode
+%{{ user1 }} ALL= NOPASSWD: /usr/sbin/reboot
+%{{ user1 }} ALL= NOPASSWD: /usr/sbin/poweroff
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/timedatectl
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/systemctl restart NetworkManager
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/systemctl restart NetworkManager.service
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/apt
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/nm-applet
+%{{ user1 }} ALL= NOPASSWD: /bin/date
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/nm-connection-editor
+%{{ user1 }} ALL= NOPASSWD: /bin/bash
+%{{ user1 }} ALL= NOPASSWD: /usr/bin/su

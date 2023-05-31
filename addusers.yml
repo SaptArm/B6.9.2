@@ -1,0 +1,37 @@
+---
+- hosts: test
+  become: true
+  vars:
+    user1: user1
+    user1_password: example
+    user2: user2
+    user2_password: example
+  
+  tasks:
+
+  - name: Add group called superusers
+    ansible.builtin.group:
+      name: superuser
+      state: present
+
+  - name: Add user1
+    ansible.builtin.user:
+      name: "{{ user1 }}"
+      password: "{{ user1_password | password_hash('sha512') }}"
+      shell: /bin/bash
+      groups: superuser
+
+  - name: Add user2
+    ansible.builtin.user:
+      name: "{{ user2 }}"
+      password: "{{ user2_password | password_hash('sha512') }}"
+      shell: /bin/bash
+      groups: superuser
+
+  - name : Copy file sudo users
+    template:
+      src: /home/user/ansible/sudousers.j2
+      dest: /etc/sudoers.d/01_users
+      owner: root
+      group: root
+      mode: u=rw,g=rw  
